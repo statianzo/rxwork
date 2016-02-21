@@ -1,0 +1,5 @@
+#!/bin/sh
+for f in src/*.js; do
+  base="$(basename $f)"
+  rollup -c rollup.config.js "$@" $f > out/$base;
+done

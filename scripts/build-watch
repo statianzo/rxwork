@@ -1,0 +1,7 @@
+#!/bin/sh
+cmd="npm run build"
+$cmd -- "$@"
+while inotifywait -qre close_write .
+do
+$cmd -- "$@"
+done
